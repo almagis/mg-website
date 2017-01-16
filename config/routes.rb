@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :articles
+  get 'about', to: 'pages#about'
+  root 'articles#index'
+
+  get 'contact', to: 'pages#contact'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

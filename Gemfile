@@ -45,3 +45,18 @@ group :development do
   gem 'spring'
 end
 
+
+
+# CUSTOM GEMS
+
+# Font awesome
+gem 'font-awesome-sass'
+
+# Bootstrap
+gem 'bootstrap-sass'
+
+# Devise
+gem 'devise'
+
+# Paperclip
+gem 'paperclip'
