@@ -1,7 +1,13 @@
 <div class="well">
-  <h1><%= article.title %></h1>
+  <h1><%= link_to article.title, article %></h1>
+  <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
+  <h5><%= article.created_at.strftime("%B %eth, %Y")  %></h5>
   <p><%= article.content %></p>
-  <%= link_to 'Show', article, class: "btn btn-success" %>
-  <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
-  <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
+  
+  <% if user_signed_in? %>
+    <% if current_user.id == article.user_id %>
+      <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
+      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
+    <% end %>
+  <% end %>
 </div>
