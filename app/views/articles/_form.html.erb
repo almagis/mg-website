@@ -12,6 +12,10 @@
     </div>
   <% end %>
   
+  <div class="field">
+    <%= f.file_field :article_img, label: "Add Image" %>
+  </div>
+  
   <div>
     <%= label_tag "Select Category:" %><br />
     <%= select_tag(:category_id, options_for_select(@categories, Category.find(1))) %>
