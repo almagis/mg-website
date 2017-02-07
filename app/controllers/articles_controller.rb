@@ -6,7 +6,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order("created_at DESC")
+    if params[:category].blank?
+      @articles = Article.all.paginate(page: params[:page], per_page: 5).order("created_at DESC")
+    else
+      #@category_id = Category.find_by(name: params[:category]).id
+      @category_id = params[:category]
+      @category_name = Category.find(@category_id).name
+      @articles = Article.where(:category_id => @category_id).paginate(page: params[:page], per_page: 5).order("created_at DESC")
+    end
   end
 
   # GET /articles/1

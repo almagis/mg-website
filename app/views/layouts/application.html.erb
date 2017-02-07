@@ -11,7 +11,7 @@
     <h1>
       <%= link_to "Matthew Gillespie", root_path %>
     </h1>
-    <h4>Fashion - Art - Music - Politics</h4>
+    <h4>Fashion | Art | Music | Politics</h4>
   </div>
     
   <nav class="navbar navbar-default">
@@ -29,7 +29,17 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Articles", articles_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "All", articles_path %></li>
+              <% Category.all.each do |category| %>
+                <li class="<%= 'active' if @category_name == category.name %>">
+                  <%= link_to category.name, articles_path(category: category.id), class: "link" %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
           
