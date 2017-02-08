@@ -1,3 +1,4 @@
+/* global tinymce */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -15,3 +16,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require tinymce-jquery
+
+tinymce.init({
+  selector: 'textarea',
+  content_css: "/app/assets/stylesheets/application.css.scss"
+});
