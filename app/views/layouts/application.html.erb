@@ -8,10 +8,12 @@
 </head>
 <body>
   <div class="container text-center">
-    <h1>
-      <%= link_to "Matthew Gillespie", root_path %>
-    </h1>
-    <h4>Fashion | Art | Music | Politics</h4>
+    <a href="/">
+      <h1>
+        Matthew Gillespie
+      </h1>
+      <h4>Fashion | Art | Music | Politics</h4>
+    </a>
   </div>
     
   <nav class="navbar navbar-default">
@@ -62,6 +64,10 @@
   
   <div class="container">
     <%= yield %>
+  </div>
+  
+  <div class="container text-center">
+    <p>Footer</p>
   </div>
 
 </body>
