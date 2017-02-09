@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   validates :content, :presence => true
   validates :title, :presence => true
+  validates :summary, :presence => true
+  validates :category_id, :presence => true
   
   belongs_to :user
   belongs_to :category

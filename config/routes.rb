@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
+  get 'category/index'
+
+  get 'category/show'
+
+  get 'category/new'
+
+  get 'category/edit'
+
+  get 'category/create'
+
+  get 'category/update'
+
+  get 'category/delete'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :articles
+  resources :categories
   get 'about', to: 'pages#about'
   root 'articles#index'
 

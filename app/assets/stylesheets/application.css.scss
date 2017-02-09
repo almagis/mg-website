@@ -39,11 +39,8 @@ a {
   color: #000;
   &:hover {
     text-decoration: none;
+    color: #333;
   }
-}
-
-textarea {
-  color: 'red';
 }
 
 
@@ -91,9 +88,30 @@ textarea {
 
 // Index Styles
 
+.index-heading {
+  font-weight: bold;
+  font-size: 36pt;
+}
+
+.article-title {
+  margin-top: 10px;
+}
+
 .index-well {
   background-color: #fff;
-  border-width: 2px;
+  border: none;
+  box-shadow: none;
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.index-user-button {
+  font-size: 20px;
+}
+
+.index-user-buttons {
+  float: right;
 }
 
 .pagination {
@@ -101,6 +119,10 @@ textarea {
   .active > span{
     background-color: #000;
     border-color: #000;
+    &:hover {
+      background-color: #000;
+      border-color: #fff;
+    }
   }
   
   li > a {
@@ -116,12 +138,30 @@ textarea {
   color: #000;
   background-color: #fff;
   border-color: #000;
+  &:hover {
+    background-color: #eee;
+    border-color: #000;
+    color: #000;
+  }
+  &:active {
+    background-color: #000;
+    color: #fff;
+  }
 }
 
 .btn-danger {
   color: #fff;
   background-color: #000;
   border-color: #000;
+  &:hover {
+    background-color: #000;
+    border-color: #fff;
+    color: #fff;
+  }
+  &:click {
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 
@@ -132,4 +172,14 @@ textarea {
   border-top: solid;
   border-width: 2px;
   border-radius: 0px;
+}
+
+
+
+// form styles
+
+.field {
+  .text-area {
+    visibility: visible;
+  }
 }

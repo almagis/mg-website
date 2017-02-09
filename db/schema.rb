@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207173157) do
+ActiveRecord::Schema.define(version: 20170209161908) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -24,12 +24,17 @@ ActiveRecord::Schema.define(version: 20170207173157) do
     t.string   "article_img_content_type"
     t.integer  "article_img_file_size"
     t.datetime "article_img_updated_at"
+    t.text     "summary"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "category_img_file_name"
+    t.string   "category_img_content_type"
+    t.integer  "category_img_file_size"
+    t.datetime "category_img_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

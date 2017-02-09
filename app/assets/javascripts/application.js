@@ -20,4 +20,5 @@
 tinymce.init({
   selector: 'textarea',
   content_css: "/app/assets/stylesheets/application.css.scss"
+  editor_deselector : "mceNoEditor"
 });

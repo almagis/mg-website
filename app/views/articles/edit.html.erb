@@ -5,15 +5,30 @@
 
 <%= simple_form_for @article, :html => { :multipart => true } do |f| %>
 
-  <%= f.file_field :article_img, label: "Add Image" %>
+  <div class="field">
+    <%= f.file_field :article_img, label: "Add Image" %>
+  </div>
 
   <%= f.select :category_id, @categories, label: "Select Category" %>
 
-  <%= f.input :title, label: "Title" %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
   
-  <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.text_area :summary, :rows => 3, :cols => 60, class: "mceNoEditor"%>
+  </div>
   
-  <%= f.button :submit %>
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 
 <% end %>
 
