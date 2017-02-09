@@ -1,2 +1,9 @@
-<h1>Category#show</h1>
-<p>Find me in app/views/category/show.html.erb</p>
+<h1>Category: <%= @category.name %></h1>
+<% if @category.category_img_content_type %>
+  <h1>Image: </h1>
+  <%= image_tag @category.category_img.url(:category_index) %>
+<% end %>
+
+<br><br>
+<%= link_to 'Edit', edit_category_path(@category), class: "btn btn-primary" %>
+<%= link_to 'Delete', category_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>

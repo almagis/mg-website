@@ -1,38 +1,32 @@
 <div class="well index-well">
-  <% if article.article_img_content_type %>
-    <div class="row">
-      <div class="col-md-3">
+  <div class="row">
+    <div class="col-md-3">
+      <% if article.article_img_content_type %>
         <%= image_tag article.article_img.url(:article_index) %>
-      </div>
-      <div class="col-md-9">
-        <a href="/articles/<%= article.id %>">
-          <h5><%= article.category.name if article.category_id %> | <%= article.created_at.strftime("%B %eth, %Y")  %></h5>
-          <h1 class="article-title"><%= article.title %></h1>
-          <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
-          <% if article.summary %>
-            <p><%= article.summary %></p>
+      <% else %>
+        <%= image_tag article.category.category_img.url(:category_index) %>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <div class="index-user-buttons">
+        <% if user_signed_in? %>
+          <% if current_user.id == article.user_id %>
+            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(article), class: "index-user-button"%>
+            &nbsp
+            <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
           <% end %>
-        </a>
-      </div>
-    </div>
-  <% else %>
-    <div class="index-user-buttons">
-      <% if user_signed_in? %>
-        <% if current_user.id == article.user_id %>
-          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(article), class: "index-user-button"%>
-          &nbsp
-          <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
         <% end %>
-      <% end %>
+      </div>
+      <a href="/articles/<%= article.id %>">
+        <h5><%= article.category.name if article.category_id %> | <%= article.created_at.strftime("%B %eth, %Y")  %></h5>
+        <h1 class="article-title"><%= article.title %></h1>
+        <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
+        <% if article.summary %>
+          <p><%= article.summary %></p>
+        <% end %>
+      </a>
     </div>
-    <a href="/articles/<%= article.id %>">
-      <h5><%= article.category.name if article.category_id %> | <%= article.created_at.strftime("%B %eth, %Y")  %></h5>
-      <h1 class="article-title"><%= article.title %></h1>
-      <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
-      <% if article.summary %>
-        <p><%= article.summary %></p>
-      <% end %>
-    </a>
-  <% end %>
+  </div>
+
   
 </div>
