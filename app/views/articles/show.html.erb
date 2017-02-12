@@ -1,18 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<div class="well">
-  <% if @article.article_img_content_type %>
-    <%= image_tag @article.article_img.url(:article_show) %>
-  <% end %>
-  <h1><%= @article.title %></h1>
-  <h4>by <%= @article.user.first_name%> <%= @article.user.last_name%></h4>
-  <h5><%= @article.category.name if @article.category_id %> | <%= @article.created_at.strftime("%B %eth, %Y")  %></h5>
-  <p><%= @article.content.html_safe %></p>
-  
-  <% if user_signed_in? %>
-    <% if current_user.id == @article.user_id %>
-      <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %>
-      <%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
-    <% end %>
-  <% end %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1><%= @article.title %></h1>
+    <h4>by <%= @article.user.first_name%> <%= @article.user.last_name%></h4>
+    <h5><%= @article.category.name if @article.category_id %> | <%= @article.created_at.strftime("%B %eth, %Y")  %></h5>
+    <div class="text-center">
+      <% if @article.article_img_content_type %>
+        <%= image_tag @article.article_img.url(:article_show) %>
+      <% else %>
+        <%= image_tag @article.category.category_img.url(:category_show) %>
+      <% end %>
+    </div>
+    <br>
+    <p><%= @article.content.html_safe %></p>
+  </div>
 </div>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @article.user_id %>
+    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %>
+    <%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
+  <% end %>
+<% end %>

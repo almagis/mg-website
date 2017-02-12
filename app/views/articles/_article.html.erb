@@ -1,10 +1,10 @@
 <div class="well index-well">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 helper">
       <% if article.article_img_content_type %>
-        <%= image_tag article.article_img.url(:article_index) %>
+        <%= image_tag article.article_img.url(:article_index), class: "img-index helper" %>
       <% else %>
-        <%= image_tag article.category.category_img.url(:category_index) %>
+        <%= image_tag article.category.category_img.url(:category_index), class: "img-index helper" %>
       <% end %>
     </div>
     <div class="col-md-9">
