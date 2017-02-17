@@ -2,24 +2,38 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1><%= @article.title %></h1>
-    <h4>by <%= @article.user.first_name%> <%= @article.user.last_name%></h4>
-    <h5><%= @article.category.name if @article.category_id %> | <%= @article.created_at.strftime("%B %eth, %Y")  %></h5>
+    <div class="article-head-section">
+      <% if @article.category_id %>
+        <h5><%= @article.category.name %></h5>
+      <% end %>
+      <h1 class="article-show-headline"><%= @article.title %></h1>
+      <h4><em>by <%= @article.user.first_name%> <%= @article.user.last_name%></em> &nbsp; <%= @article.created_at.strftime("%B %eth, %Y")  %></h4>
+      
+    </div>
     <div class="text-center">
       <% if @article.article_img_content_type %>
-        <%= image_tag @article.article_img.url(:article_show) %>
+        <%= image_tag @article.article_img.url(:article_show), class: "img-show" %>
       <% else %>
-        <%= image_tag @article.category.category_img.url(:category_show) %>
+        <%= image_tag @article.category.category_img.url(:category_show), class: "img-show" %>
       <% end %>
     </div>
     <br>
-    <p><%= @article.content.html_safe %></p>
+    
+    <div class="article-body">
+      <p><%= @article.content.html_safe %></p>
+    </div>
+    
+    <div class="text-center">
+      <p><i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i></p>
+    </div>
+    
+    <% if user_signed_in? %>
+      <% if current_user.id == @article.user_id %>
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %>
+        <%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <% if current_user.id == @article.user_id %>
-    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %>
-    <%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
-  <% end %>
-<% end %>
+

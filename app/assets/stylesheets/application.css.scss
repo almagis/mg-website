@@ -131,6 +131,21 @@ a {
 }
 
 
+// Article show styles
+
+.article-show-headline {
+  font-weight: bold;
+  font-size: 48px;
+  margin-top: 10px;
+}
+
+.article-head-section {
+  border-bottom: solid;
+  border-color: #ddd;
+  border-width: 1px;
+  margin-bottom: 25px;
+}
+
 
 // Button Styles
 
@@ -164,6 +179,40 @@ a {
   }
 }
 
+.twitter-btn {
+  color: #fff;
+  background-color: #00aced;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 4px;
+  border: solid;
+  border-radius: 100%;
+  border-width: 2px;
+  border-color: #00aced;
+  &:hover {
+    color: #00aced;
+    background-color: #fff;
+  }
+}
+
+.insta-btn {
+  color: #fff;
+  background-color: #9966ff;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: solid;
+  border-radius: 100%;
+  border-width: 2px;
+  border-color: #9966ff;
+  
+  &:hover {
+    color: #9966ff;
+    background-color: #fff;
+  }
+}
 
 // Image styles
 
@@ -173,7 +222,7 @@ a {
 }
 
 .img-show {
-  
+  width: 400px;
 }
 
 .helper {
@@ -190,6 +239,12 @@ a {
   border-top: solid;
   border-width: 2px;
   border-radius: 0px;
+  margin-top: 75px;
+  
+  .footer-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 
