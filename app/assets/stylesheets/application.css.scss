@@ -146,6 +146,22 @@ a {
   margin-bottom: 25px;
 }
 
+.article-author {
+  font-weight: bold;
+}
+
+.article-category {
+  color: red;
+}
+
+.article-body p {
+  &:nth-child(2) {
+    &::first-letter {
+      font-weight: bold;
+      font-size: 48px;
+    }
+  }
+}
 
 // Button Styles
 
