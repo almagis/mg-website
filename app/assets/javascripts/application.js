@@ -1,4 +1,5 @@
 /* global tinymce */
+/* golbal $*/
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -18,7 +19,11 @@
 //= require tinymce-jquery
 
 tinymce.init({
-  selector: 'textarea',
+  selector: '.textarea',
   content_css: "/app/assets/stylesheets/application.css.scss"
-  editor_deselector : "mceNoEditor"
+});
+
+$(document).ready(function(){
+  $('.article-body>p').addClass('article-text');
+  $('.article-body>p').css({'color': 'black','font-family': 'Lora','font-size': '20px','line-width': '28px'});
 });

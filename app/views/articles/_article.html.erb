@@ -18,7 +18,7 @@
         <% end %>
       </div>
       <a href="/articles/<%= article.id %>">
-        <h5><%= article.category.name if article.category_id %> | <%= article.created_at.strftime("%B %eth, %Y")  %></h5>
+        <h5 class="article-top-line"><%= article.category.name if article.category_id %> | <%= article.created_at.strftime("%B %eth, %Y")  %></h5>
         <h1 class="article-title"><%= article.title %></h1>
         <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
         <% if article.summary %>

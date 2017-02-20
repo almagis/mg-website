@@ -30,6 +30,7 @@ body {
 	font-family: 'Lora', serif;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
@@ -97,6 +98,10 @@ a {
   margin-top: 10px;
 }
 
+.article-top-line {
+  margin-top: 10px;
+}
+
 .index-well {
   background-color: #fff;
   border: none;
@@ -155,12 +160,26 @@ a {
 }
 
 .article-body p {
+  font-size: 20px;
+  font-family: 'Lora', serif;
+  line-height: 28px;
   &:nth-child(2) {
     &::first-letter {
       font-weight: bold;
       font-size: 48px;
     }
   }
+}
+
+.article-text {
+  font-size: 20px;
+  font-family: 'Lora', serif;
+  line-height: 28px;
+  color: #000;
+}
+
+.textarea {
+  font-family: 'Lora', serif;
 }
 
 // Button Styles
@@ -235,6 +254,8 @@ a {
 .img-index {
   width: 160px;
   vertical-align: middle;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .img-show {
