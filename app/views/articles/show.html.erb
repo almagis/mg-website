@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
@@ -27,12 +26,15 @@
       <p><i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i></p>
     </div>
     
-    <% if user_signed_in? %>
-      <% if current_user.id == @article.user_id %>
-        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %>
-        <%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>
-      <% end %>
+    
+    <% if current_user.id == @article.user_id %>
+      <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(@article), class: "index-user-button"%>
+      &nbsp
+      <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, @article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
     <% end %>
+    
+    <%= link_to '<p class="article-back-btn"> <i class= "fa fa-arrow-left"></i> Back </p>'.html_safe, :back %>
+    
   </div>
 </div>
 

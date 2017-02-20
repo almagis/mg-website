@@ -60,7 +60,7 @@ a {
 
 .header-below-name {
   font-family: 'Lora', serif;
-  font-style: italic;
+  font-style: none;
   margin-bottom: 20px;
 }
 
@@ -247,6 +247,13 @@ a {
     color: #9966ff;
     background-color: #fff;
   }
+}
+
+
+.article-back-btn {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 // Image styles

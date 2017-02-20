@@ -34,5 +34,5 @@
 
 
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to '<p class="article-back-btn"> Show Article </p>'.html_safe, @article %> <br>
+<%= link_to '<p class="article-back-btn"> <i class= "fa fa-arrow-left"></i> Back </p>'.html_safe, :back %>

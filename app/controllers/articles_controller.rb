@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: 'Article was successfully created.', change: true }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
