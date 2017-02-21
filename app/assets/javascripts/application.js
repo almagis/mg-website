@@ -1,5 +1,5 @@
 /* global tinymce */
-/* golbal $*/
+/* global $*/
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -25,5 +25,6 @@ tinymce.init({
 
 $(document).ready(function(){
   $('.article-body>p').addClass('article-text');
-  $('.article-body>p').css({'color': 'black','font-family': 'Lora','font-size': '20px','line-width': '28px'});
+  $('.article-body>p').css({'color': '#333333','font-family': 'Lora','font-size': '20px','line-width': '28px'});
+  $('.article-body>p>a').css({'color': '#4286f4'}).attr("target","_blank");
 });

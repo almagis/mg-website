@@ -6,6 +6,6 @@ class Article < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :category
-  has_attached_file :article_img, styles: { article_show: "300x300>", article_index: "300x300>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :article_img, styles: { article_show: "1000x1000>", article_index: "500x500>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :article_img, content_type: /\Aimage\/.*\z/
 end
