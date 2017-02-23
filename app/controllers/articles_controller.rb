@@ -1,18 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :find_user
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
     if params[:category].blank?
-      @articles = Article.all.paginate(page: params[:page], per_page: 5).order("created_at DESC")
+      @articles = Article.all.paginate(page: params[:page], per_page: 10).order("created_at DESC")
     else
       #@category_id = Category.find_by(name: params[:category]).id
       @category_id = params[:category]
       @category_name = Category.find(@category_id).name
-      @articles = Article.where(:category_id => @category_id).paginate(page: params[:page], per_page: 5).order("created_at DESC")
+      @articles = Article.where(:category_id => @category_id).paginate(page: params[:page], per_page: 10).order("created_at DESC")
     end
   end
 
@@ -83,9 +82,5 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :content, :category_id, :article_img, :summary)
-    end
-    
-    def find_user
-      #@user = User.find(params[:user_id])
     end
 end

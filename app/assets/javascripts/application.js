@@ -27,4 +27,18 @@ $(document).ready(function(){
   $('.article-body>p').addClass('article-text');
   $('.article-body>p').css({'color': '#333333','font-family': 'Lora','font-size': '20px','line-width': '28px'});
   $('.article-body>p>a').css({'color': '#4286f4'}).attr("target","_blank");
+  
+  if ($('.article-date').length) {
+    $('.article-date').each( function(index) {
+      if ($.inArray($(':nth-child(1)', this).html(), ['1','21','31']) > -1) {
+        $(':nth-child(2)', this).html('st');
+      } else if ($.inArray($(':nth-child(1)', this).html(), ['2','22']) > -1) {
+        $(':nth-child(2)', this).html('nd');
+      } else if ($.inArray($(':nth-child(1)', this).html(), ['3','23']) > -1) {
+        $(':nth-child(2)', this).html('rd');
+      } else {
+        $(':nth-child(2)', this).html('th');
+      }
+    });
+  }
 });
