@@ -44,6 +44,10 @@ a {
   }
 }
 
+.main-section {
+  min-height: 400px;
+}
+
 
 // Header styles
 
@@ -190,6 +194,24 @@ a {
 
 .textarea {
   font-family: 'Lora', serif;
+}
+
+// Contact Page Styles
+
+.contact-list {
+  text-align: left;
+  width: 400px;
+  padding: 20px;
+  border: solid;
+  margin-top: 20px;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #444444;
+  border-color: #bbb
+}
+
+.contact-list>a, .contact-list>span {
+  line-height: 64px;
 }
 
 // Button Styles
