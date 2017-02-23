@@ -1,3 +1,8 @@
+<% if params[:category].blank? %>
+  <% @title = "Articles" %>
+<% else %>
+  <% @title = @category_name %>
+<% end %>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="text-center">
