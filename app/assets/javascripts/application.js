@@ -1,5 +1,6 @@
 /* global tinymce */
 /* global $*/
+/* global nav */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -43,5 +44,31 @@ $(document).ready(function(){
         $(':nth-child(2)', this).html('th'); // Defaults to 'th'
       }
     });
+  }
+  
+  
+  // Code block to highlight corresponding navbar link
+  switch (nav) {
+    case 1:
+      $('.navbar-articles').css({'color':'red', 'border-color':'red'});
+      break;
+    case 2:
+      $('.navbar-about').css({'color':'red', 'border-color':'red'});
+      break;
+    case 3:
+      $('.navbar-contact').css({'color':'red', 'border-color':'red'});
+      break;
+    case 4:
+      $('.navbar-edit-profile').css({'color':'red', 'border-color':'red'});
+      break;
+    case 5:
+      $('.navbar-categories').css({'color':'red', 'border-color':'red'});
+      break;
+    case 6:
+      $('.navbar-sign-up').css({'color':'red', 'border-color':'red'});
+      break;
+    case 7:
+      $('.navbar-sign-in').css({'color':'red', 'border-color':'red'});
+      break;
   }
 });
