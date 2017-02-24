@@ -200,8 +200,7 @@ a {
 
 .contact-list {
   text-align: left;
-  width: 400px;
-  padding: 20px;
+  padding: 20px 40px 20px 40px;
   border: solid;
   margin-top: 20px;
   border-width: 1px;
@@ -212,6 +211,18 @@ a {
 
 .contact-list>a, .contact-list>span {
   line-height: 64px;
+}
+
+// About Page Styles
+
+.about-heading, .contact-heading {
+  font-weight: bold;
+}
+
+.about-content {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
 }
 
 // Button Styles
@@ -325,6 +336,14 @@ a {
     vertical-align: middle;
 }
 
+.profile-image {
+  border-radius: 100%;
+  height: 160px;
+  margin: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 // footer styles
 
