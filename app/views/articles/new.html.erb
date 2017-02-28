@@ -1,6 +1,9 @@
-<%= tinymce_assets %>
+<!-- New article page -->
+<%= tinymce_assets %> <!-- requirement for rich text editor --> 
 <h1>New Article</h1>
 
+<!-- Renders the form -->
 <%= render 'form' %>
 
+<!-- Back button -->
 <%= link_to '<p class="article-back-btn"> <i class= "fa fa-arrow-left"></i> Back </p>'.html_safe, :back %>

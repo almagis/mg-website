@@ -1,3 +1,7 @@
+<!-- Form partial for article -->
+
+
+<!-- Initialises tinyMCE -->
 <%= tinymce %>
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
@@ -12,6 +16,7 @@
     </div>
   <% end %>
   
+  <!-- various form fields for article info -->
   <div class="field">
     <%= f.file_field :article_img, label: "Add Image" %>
   </div>
@@ -31,6 +36,7 @@
     <%= f.text_area :summary, :rows => 3, :cols => 60, class: "mceNoEditor" %>
   </div>
   
+  <!-- tinyMCE element - rich text editor -->
   <div>
     <%= f.label :content %><br>
     <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>

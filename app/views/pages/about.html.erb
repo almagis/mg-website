@@ -1,4 +1,7 @@
+<!-- Assigns value to @title variable -->
 <% @title = "About Me" %>
+
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 2;
 <% end %>
@@ -6,10 +9,13 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="text-center">
+      <!-- About heading -->
       <h1 class="about-heading">About Me</h1>
     </div>
     <div>
+      <!-- Simple profile image with circular border -->
       <%= image_tag "TestProfile.jpg", class: "text-center profile-image" %>
+      <!-- A few articles listing info, achievements etc -->
       <p class="about-content">
       Polaroid hot chicken you probably haven't heard of them, meggings 
       williamsburg tacos trust fund meh echo park narwhal before they sold out 
@@ -17,6 +23,12 @@
       mug, ramps beard 90's poke paleo health goth vinyl austin tumeric tilde. Lomo 
       poutine semiotics, fashion axe fanny pack skateboard enamel pin meggings 
       kinfolk before they sold out normcore tattooed chartreuse scenester pug.
+      <br><br>
+      Narwhal gluten-free chicharrones iceland fixie vaporware. Cred church-key dreamcatcher, 
+      sustainable flexitarian edison bulb mustache VHS air plant. Locavore seitan 
+      hella trust fund. Crucifix banjo fashion axe you probably haven't heard of 
+      them, shabby chic tousled thundercats wayfarers tote bag tumeric photo booth 
+      slow-carb pork belly raw denim.
       </p>
     </div>
   </div>

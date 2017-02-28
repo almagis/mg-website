@@ -1,7 +1,10 @@
+<!-- Cateogry show page -->
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 5;
 <% end %>
 
+<!-- Shows category name and default image -->
 <h1>Category: <%= @category.name %></h1>
 <% if @category.category_img_content_type %>
   <h1>Image: </h1>
@@ -9,5 +12,6 @@
 <% end %>
 
 <br><br>
+<!-- Options to edit/delete category -->
 <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-primary" %>
 <%= link_to 'Delete', category_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %>

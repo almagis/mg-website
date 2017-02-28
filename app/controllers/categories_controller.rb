@@ -6,15 +6,19 @@ class CategoriesController < ApplicationController
     @categories = Category.all.order("name ASC")
   end
 
+
   def show
   end
+
 
   def new
     @category = Category.new
   end
 
+
   def edit
   end
+
 
   def create
     @category = Category.new(category_params)
@@ -24,7 +28,6 @@ class CategoriesController < ApplicationController
     else
       render 'new'
     end
-      
   end
 
   def update
@@ -40,6 +43,8 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
   
+  
+  # Private methods
   private
     def set_category
       @category = Category.find(params[:id])

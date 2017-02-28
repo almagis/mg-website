@@ -1,9 +1,12 @@
+<!-- Category index page -->
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 5;
 <% end %>
 
 <h1>Categories</h1>
 
+<!-- Links to each category as well as new category form -->
 <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.name, category %><br></li>

@@ -1,24 +1,41 @@
 <div class="well index-well">
   <div class="row">
+    <!-- Left hand quarter of the block has the article image -->
     <div class="col-md-3">
-      <% if article.article_img_content_type %>
-        <%= image_tag article.article_img.url(:article_index), class: "img-index" %>
-      <% else %>
-        <%= image_tag article.category.category_img.url(:category_index), class: "img-index" %>
-      <% end %>
+      <a href="/articles/<%= article.id %>"> <!-- image links to the article -->
+        <% if article.article_img_content_type %>
+          <%= image_tag article.article_img.url(:article_index), class: "img-index" %> <!-- If it's there the page shows the article image -->
+        <% else %>
+          <%= image_tag article.category.category_img.url(:category_index), class: "img-index" %><!-- Otherwise defaults to the category image -->
+        <% end %>
+      </a>
     </div>
+    <!-- Right hand three quarters has the article information -->
     <div class="col-md-9">
-      <div class="index-user-buttons">
+      <!-- Edit/Delete buttons for user -->
+      <div class="index-user-buttons"> 
         <% if user_signed_in? %>
           <% if current_user.id == article.user_id %>
+            <!-- Edit btn -->
             <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(article), class: "index-user-button"%>
             &nbsp
+            <!-- Delete btn -->
             <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
           <% end %>
         <% end %>
       </div>
-      <a href="/articles/<%= article.id %>">
-        <h5 class="article-top-line"><%= article.category.name if article.category_id %> | <span class="article-date"><%= article.created_at.strftime("%B") %> <span class="article-date-day"><%= article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator"></span>, <%= article.created_at.strftime("%Y")%></span></h5>
+      <a href="/articles/<%= article.id %>"> <!-- Big link to article show -->
+        <h5 class="article-top-line">
+          <!-- Shows article category, if there is one -->
+          <%= article.category.name if article.category_id %> | 
+          <!-- Date Block -->
+          <span class="article-date">
+            <!-- The date display uses a js function to provide the correct ordinal indicator -->
+            <%= article.created_at.strftime("%B") %>
+            <span class="article-date-day"><%= article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator"></span>, <%= article.created_at.strftime("%Y")%>
+          </span>
+        </h5>
+        <!-- Article title, author & summary -->
         <h1 class="article-title"><%= article.title %></h1>
         <h4>by <%= article.user.first_name%> <%= article.user.last_name%></h4>
         <% if article.summary %>
@@ -27,6 +44,4 @@
       </a>
     </div>
   </div>
-
-  
 </div>

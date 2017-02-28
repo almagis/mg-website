@@ -1,9 +1,11 @@
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 7;
 <% end %>
 
 <h2>Log in</h2>
 
+<!-- Various form fields for user credentials -->
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />

@@ -1,28 +1,34 @@
+<!-- Assigns value to @title variable -->
 <% @title = "Contact" %>
+
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 3;
 <% end %>
 
 <div class="text-center">
-  <h1 class="contact-heading">Contact Me</h1>
+  <!-- Contact heading -->
+  <h1 class="contact-heading">Contact</h1>
   
   <h3>
+    <!-- Simple message -->
     If you have any questions, please feel free to get in touch:<br>
     <div class="row">
       <div class="col-md-4 col-md-offset-4 contact-list">
-        <a href="#">
+        <!-- Links to email, social media etc -->
+        <a href="#" target="_blank">
           <i class="fa fa-envelope"></i> test@example.co.uk
         </a><br>
         <span>
           <i class="fa fa-phone"></i> +44 234 2343 233 
         </span><br>
-        <a href="#">
+        <a href="#" target="_blank">
           <i class="fa fa-twitter"></i> @TwitterHandle
         </a><br>
-        <a href="#">
+        <a href="#" target="_blank">
           <i class="fa fa-instagram"></i> @IGhandle
         </a><br>
-        <a href="#">
+        <a href="#" target="_blank">
           <i class="fa fa-linkedin"></i> MatthewGillespie
         </a><br>
       </div>

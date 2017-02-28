@@ -23,13 +23,11 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700|Raleway:400,400i,700');
 
-// General styling
+// General styling **********************************************
 
 body {
-	//background-color: #f5f5f5;
 	font-family: 'Lora', serif;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
@@ -49,7 +47,7 @@ a {
 }
 
 
-// Header styles
+// Header styles **********************************************
 
 .header-link {
   &:hover {
@@ -69,7 +67,7 @@ a {
 }
 
 
-// Navbar Styles
+// Navbar Styles **********************************************
 
 .navbar-default {
   background-color: #fff;
@@ -80,7 +78,8 @@ a {
   border-radius: 0px;
 }
 
-.navbar .navbar-nav {
+// navbar centering
+.navbar .navbar-nav { 
   display: inline-block;
   float: none;
   vertical-align: top;
@@ -90,6 +89,7 @@ a {
   text-align: center;
 }
 
+// Styling for responisve navbar hovering
 .navbar-nav > li > a{
   padding-top: 13px;
   border-top: solid;
@@ -100,13 +100,8 @@ a {
   }
 }
 
-.navbar-highlight {
-  color: red;
-  border-color: red;
-}
 
-
-// Index Styles
+// Index Styles **********************************************
 
 .index-heading {
   font-weight: bold;
@@ -139,7 +134,6 @@ a {
 }
 
 .pagination {
-  
   .active > span{
     background-color: #333333;
     border-color: #333333;
@@ -155,7 +149,7 @@ a {
 }
 
 
-// Article show styles
+// Article show styles **********************************************
 
 .article-show-headline {
   font-weight: bold;
@@ -176,12 +170,14 @@ a {
 
 .article-category {
   color: red;
+  font-weight: bold;
 }
 
 .article-body p {
   font-size: 20px;
   font-family: 'Lora', serif;
   line-height: 28px;
+  // Adding initial to the start of the first paragraph
   &:nth-child(2) {
     &::first-letter {
       font-weight: bold;
@@ -201,7 +197,7 @@ a {
   font-family: 'Lora', serif;
 }
 
-// Contact Page Styles
+// Contact Page Styles **********************************************
 
 .contact-list {
   text-align: left;
@@ -211,17 +207,24 @@ a {
   border-width: 1px;
   border-radius: 5px;
   border-color: #444444;
-  border-color: #bbb
+  border-color: #ddd
 }
 
 .contact-list>a, .contact-list>span {
   line-height: 64px;
 }
 
-// About Page Styles
+// About Page Styles **********************************************
 
 .about-heading, .contact-heading {
   font-weight: bold;
+}
+
+.about-heading {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  padding-bottom: 10px;
 }
 
 .about-content {
@@ -230,7 +233,7 @@ a {
   text-align: justify;
 }
 
-// Button Styles
+// Button Styles **********************************************
 
 .btn-primary {
   color: #333333;
@@ -322,7 +325,7 @@ a {
   margin-top: 20px;
 }
 
-// Image styles
+// Image styles **********************************************
 
 .img-index {
   width: 160px;
@@ -350,7 +353,7 @@ a {
   display: block;
 }
 
-// footer styles
+// footer styles **********************************************
 
 .footer {
   border-top: black;
@@ -367,7 +370,7 @@ a {
 
 
 
-// form styles
+// form styles **********************************************
 
 .field {
   .text-area {

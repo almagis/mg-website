@@ -1,15 +1,20 @@
+<!-- assigns variable 'nav' to enable navbar highlighting -->
 <%= javascript_tag do %>
   nav = 1
 <% end %>
 
+<!-- Assigns value to @title variable -->
 <% if params[:category].blank? %>
-  <% @title = "Articles" %>
+  <% @title = "Articles" %> <!-- Defaults to 'Articles' if no filter applied -->
 <% else %>
-  <% @title = @category_name %>
+  <% @title = @category_name %> <!-- Assigned to category name, if the filter is applied -->
 <% end %>
+
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <div class="text-center">
+      <!-- Similarly to the tab title the page title is either 'Articles' or the relevant cateogry name -->
       <% if params[:category].blank? %>
         <h1 class="index-heading">Articles</h1>
       <% else %>
@@ -18,14 +23,19 @@
         </h1>
       <% end %>
     </div>
+    <!-- If the user is sign in they will see a button to create a new article -->
     <% if user_signed_in? %>
       <%= link_to 'New Article', new_article_path, class:"btn btn-primary btn-block" %>
     <% end %>
     <br />
+    
+    <!-- Rails in-built functionaility allows each of the articles to be rendered with a simple command: -->
     <%= render @articles %>
+    
   </div>
 </div>
 
+<!-- Pagination block sits at the bottom, above the footer -->
 <div class="text-center">
   <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
 </div>
