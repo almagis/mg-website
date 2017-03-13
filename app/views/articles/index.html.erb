@@ -13,16 +13,6 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div class="text-center">
-      <!-- Similarly to the tab title the page title is either 'Articles' or the relevant cateogry name -->
-      <% if params[:category].blank? %>
-        <h1 class="index-heading">Articles</h1>
-      <% else %>
-        <h1 class="index-heading">
-          <%= @category_name %>
-        </h1>
-      <% end %>
-    </div>
     <!-- If the user is sign in they will see a button to create a new article -->
     <% if user_signed_in? %>
       <%= link_to 'New Article', new_article_path, class:"btn btn-primary btn-block" %>

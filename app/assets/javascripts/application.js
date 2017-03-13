@@ -28,10 +28,12 @@ tinymce.init({
 $(document).ready(function(){
   // Overriding rich text styling for article content
   $('.article-body>p').addClass('article-text');
-  $('.article-body>p').css({'color': '#333333','font-family': 'Lora','font-size': '20px','line-width': '28px'});
+  $('.article-body>p').css({'color': '#333333','font-family': 'Raleway','font-size': '20px','line-width': '28px'});
   $('.article-body>p>span').css({'color': '#333333','font-family': 'Lora','font-size': '20px','line-width': '28px'});
   $('.article-body>p>em').css({'color': '#333333','font-family': 'Lora','font-size': '20px','line-width': '28px'});
   $('.article-body>p>a').css({'color': '#4286f4'}).attr("target","_blank");
+  $('.article-body>p>span>img').css({'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '50px', 'display': 'block', 'width': '500px', 'height': 'auto'});
+  $(".article-body em").css({'color': '#bbb'});
   
   // This code block formats the date so that the ordinal indicator (i.e. 1st, 2nd) is correct
   if ($('.article-date').length) { // Checks to see if there is a date element on the page

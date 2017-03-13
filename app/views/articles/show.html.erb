@@ -10,22 +10,29 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="article-head-section">
       <!-- Article category -->
-      <% if @article.category_id %>
-        <h5 class="article-category"><%= @article.category.name %></h5>
-      <% end %>
+      <h4 class="article-date">
+        <%= @article.created_at.strftime("%B") %> 
+        <span class="article-date-day">
+          <%= @article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator">
+        </span>, <%= @article.created_at.strftime("%Y")%>
+      </h4>
+      
       <!-- Article title -->
-      <h1 class="article-show-headline"><%= @article.title %></h1>
+      <a href="/articles/<%= @article.id %>" target="-blank">
+        <h1 class="article-show-headline"><%= @article.title %>&nbsp;<i class="fa fa-angle-right"></i></h1>
+      </a>
       <h4>
         <!-- Article author -->
-        <span class="article-author">by <%= @article.user.first_name%> <%= @article.user.last_name%></span> &nbsp;
+        <span class="article-author"><%= @article.user.first_name%> <%= @article.user.last_name%></span> &#9679;
         <!-- Responsive date element. Uses js file to adapt the ordinal indicator to the article date i.e. 1st, 2nd, 3rd etc -->
-        <span class="article-date">
-          <%= @article.created_at.strftime("%B") %> 
-          <span class="article-date-day">
-            <%= @article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator">
-          </span>, <%= @article.created_at.strftime("%Y")%>
-        </span>
+        <% if @article.category_id %>
+          <span class="article-category"><%= @article.category.name %></span>
+        <% end %>
+        
       </h4>
+      <p class="article-index-summary">
+        <%= @article.summary %>
+      </p>
     </div>
     
     <!-- Article image - appears large and centered -->
@@ -44,9 +51,7 @@
     </div>
     
     <!-- Article footer -->
-    <div class="text-center">
-      <p><i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i> &emsp; <i class="fa fa-asterisk"></i></p>
-    </div>
+    <div class="article-index-bottom-padding"></div>
     
     <!-- Edit/Delete buttons -->
     <% if user_signed_in? %>
