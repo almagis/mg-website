@@ -45,6 +45,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  # Postgressql for production server
+  gem 'pg'
+end
 
 
 # CUSTOM GEMS
