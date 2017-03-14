@@ -144,18 +144,38 @@ a {
   float: right;
 }
 
+
 .pagination {
-  .active > span{
-    background-color: #333333;
-    border-color: #333333;
-    &:hover {
-      background-color: #333333;
-      border-color: #fff;
+  li {
+    a, span {
+      color: #dddddd;
+      border-top: none;
+      border-bottom: none;
+      &:hover {
+        background-color: #dddddd;
+        color: #fff;
+      }
     }
   }
-  
-  li > a {
-    color: #333333;
+  .prev > * {
+    border-left: none;
+  }
+  .next > * {
+    border-right: none;
+  }
+  .disabled > span {
+    color: #dddddd;
+    &:hover {
+      color: #dddddd;
+    }
+  }
+  .active > span {
+    background-color: #dddddd;
+    border-color: #dddddd;
+    &:hover {
+      background-color: #dddddd;
+      border-color: #dddddd;
+    }
   }
 }
 
@@ -172,6 +192,11 @@ a {
   line-height: 28px;
 }
 
+.article-separator {
+  font-size: 32px;
+  color: #dddddd;
+  padding-bottom: 40px;
+}
 // Article show styles **********************************************
 
 .article-show-headline {
@@ -207,8 +232,8 @@ a {
   // Adding initial to the start of the first paragraph
   &:nth-child(2) {
     &::first-letter {
-      font-weight: bold;
-      font-size: 48px;
+      //font-weight: bold;
+      //font-size: 48px;
     }
   }
 }

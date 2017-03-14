@@ -2,9 +2,7 @@
   <!-- Article category -->
   <h4 class="article-date">
     <%= article.created_at.strftime("%B") %> 
-    <span class="article-date-day">
-      <%= article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator">
-    </span>, <%= article.created_at.strftime("%Y")%>
+    <span class="article-date-day"><%= article.created_at.strftime("%e") %></span><span class="article-date-ordinal-indicator"></span>, <%= article.created_at.strftime("%Y")%>
   </h4>
   
   <!-- Article title -->
@@ -23,6 +21,15 @@
   <p class="article-index-summary">
     <%= article.summary %>
   </p>
+  
+  <!-- Edit/Delete buttons -->
+  <% if user_signed_in? %>
+    <% if current_user.id == article.user_id %>
+      <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(article), class: "index-user-button"%>
+      &nbsp
+      <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
+    <% end %>
+  <% end %>
 </div>
 
 <!-- Article image - appears large and centered -->
@@ -41,13 +48,8 @@
 </div>
 
 
-<!-- Edit/Delete buttons -->
-<% if user_signed_in? %>
-  <% if current_user.id == article.user_id %>
-    <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_article_path(article), class: "index-user-button"%>
-    &nbsp
-    <%= link_to '<i class="fa fa-window-close"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?'}, class: "index-user-button"%>
-  <% end %>
-<% end %>
-
 <div class="article-index-bottom-padding"></div>
+
+<div class="text-center article-separator">
+  <i class="fa fa-bolt"></i>
+</div>

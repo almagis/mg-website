@@ -6,13 +6,13 @@ class ArticlesController < ApplicationController
   def index
     if params[:category].blank?
       # @articles vairable with pagination and without category filter
-      @articles = Article.all.paginate(page: params[:page], per_page: 10).order("created_at DESC")
+      @articles = Article.all.paginate(page: params[:page], per_page: 5).order("created_at DESC")
     else
       # Category varviables
       @category_id = params[:category]
       @category_name = Category.find(@category_id).name
       # @articles variable with category filter and pagination
-      @articles = Article.where(:category_id => @category_id).paginate(page: params[:page], per_page: 10).order("created_at DESC")
+      @articles = Article.where(:category_id => @category_id).paginate(page: params[:page], per_page: 5).order("created_at DESC")
     end
   end
 
