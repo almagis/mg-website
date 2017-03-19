@@ -16,9 +16,8 @@
       </h4>
       
       <!-- Article title -->
-      <a href="/articles/<%= @article.id %>" target="-blank">
-        <h1 class="article-show-headline"><%= @article.title %>&nbsp;<i class="fa fa-angle-right"></i></h1>
-      </a>
+      
+      <h1 class="article-show-headline"><%= @article.title %></h1>
       <h4>
         <!-- Article author -->
         <span class="article-author"><%= @article.user.first_name%> <%= @article.user.last_name%></span> &#9679;
