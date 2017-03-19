@@ -59,9 +59,6 @@
             <li><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li><%=link_to "Edit Profile", edit_user_registration_path, class: "navbar-edit-profile" %></li>
             <li><%=link_to "Categories", categories_path, class: "navbar-categories" %></li>
-          <% else %>
-            <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-sign-up" %></li><!-- REMOVE FOR PRODUCTION -->
-            <li><%= link_to "Sign In", new_user_session_path, class: "navbar-sign-in" %></li><!-- REMOVE FOR PRODUCTION -->
           <% end %>
         </ul>
         
@@ -84,7 +81,16 @@
   <div class="footer">
     <div class="container text-center">
       <div class="footer-container">
+        
+        
+        <div class="footer-copyright">
+          <p><i class="fa fa-copyright"></i> 2017 Matthew Gillespie</p>
+          <p>All rights reserved</p>
+        </div>
+        
+        
         <!-- links for social media -->
+        <!--
         <a href="https://twitter.com/alexmgillespie" class="twitter-btn" target="_blank">
           <i class="fa fa-twitter"></i>
         </a>
@@ -96,6 +102,7 @@
         <a href="https://www.instagram.com/alexgillespie/" class="insta-btn" target="_blank">
           <i class="fa fa-instagram"></i>
         </a>
+        -->
       </div>
     </div>
   </div>
