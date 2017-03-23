@@ -27,11 +27,11 @@
 // General styling **********************************************
 
 body {
-	font-family: 'courier', serif;
+	font-family: 'Source code pro', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'courier', sans-serif;
+	font-family: 'Source code pro', sans-serif;
 	font-weight: 400;
 }
 
@@ -67,11 +67,11 @@ a {
 
 .header-name {
   font-size: 20pt;
-  font-family: 'courier';
+  font-family: 'Source code pro';
 }
 
 .header-below-name {
-  font-family: 'courier', serif;
+  font-family: 'Source code pro', serif;
   font-style: none;
   margin-bottom: 20px;
 }
@@ -228,7 +228,7 @@ a {
 
 .article-body p {
   font-size: 20px;
-  font-family: 'courier', serif;
+  font-family: 'Source code pro', serif;
   line-height: 28px;
   // Adding initial to the start of the first paragraph
   &:nth-child(2) {
@@ -241,13 +241,13 @@ a {
 
 .article-text {
   font-size: 20px;
-  font-family: 'courier', serif;
+  font-family: 'Source code pro', serif;
   line-height: 28px;
   color: #333333;
 }
 
 .textarea {
-  font-family: 'courier', serif;
+  font-family: 'Source code pro', serif;
 }
 
 .article-asterisks {
